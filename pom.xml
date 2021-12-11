@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.horvee.storylog</groupId>
+    <artifactId>storylog</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0.RELEASE</version>
+    <modules>
+        <module>core</module>
+        <module>empty-impl</module>
+        <module>transfer-spring-boot-kafka</module>
+        <module>springboot-configuration</module>
+        <module>save-spring-boot-elasticsearch</module>
+        <module>service-consumer-ke</module>
+        <module>spring-boot-interceptor-configuration</module>
+        <module>sample</module>
+        <module>transfer-spring-boot-rocketmq</module>
+    </modules>
+	
+	<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.5.RELEASE</version>
+    </parent>
+
+    <properties>
+        <storylog.version.core>1.0.0.RELEASE</storylog.version.core>
+        <storylog.version.emptyImpl>1.0.0.RELEASE</storylog.version.emptyImpl>
+        <storylog.version.springbootConfiguration>1.0.0.RELEASE</storylog.version.springbootConfiguration>
+        <storylog.version.transferSpringBootKafka>1.0.0.RELEASE</storylog.version.transferSpringBootKafka>
+        <storylog.version.saveSpringBootElasticsearch>1.0.0.RELEASE</storylog.version.saveSpringBootElasticsearch>
+        <storylog.version.springBootInterceptorConfiguration>1.0.0.RELEASE</storylog.version.springBootInterceptorConfiguration>
+        <storylog.version.transferSpringBootRocketMQ>1.0.0.RELEASE</storylog.version.transferSpringBootRocketMQ>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR9</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--      Story log package      -->
+            <dependency>
+                <groupId>com.github.horvee.storylog</groupId>
+                <artifactId>core</artifactId>
+                <version>${storylog.version.core}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.horvee.storylog</groupId>
+                <artifactId>empty-impl</artifactId>
+                <version>${storylog.version.emptyImpl}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.horvee.storylog</groupId>
+                <artifactId>springboot-configuration</artifactId>
+                <version>${storylog.version.springbootConfiguration}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.horvee.storylog</groupId>
+                <artifactId>transfer-spring-boot-kafka</artifactId>
+                <version>${storylog.version.transferSpringBootKafka}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.horvee.storylog</groupId>
+                <artifactId>save-spring-boot-elasticsearch</artifactId>
+                <version>${storylog.version.saveSpringBootElasticsearch}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.horvee.storylog</groupId>
+                <artifactId>spring-boot-interceptor-configuration</artifactId>
+                <version>${storylog.version.springBootInterceptorConfiguration}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.horvee.storylog</groupId>
+                <artifactId>transfer-spring-boot-rocketmq</artifactId>
+                <version>${storylog.version.transferSpringBootRocketMQ}</version>
+            </dependency>
+            
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

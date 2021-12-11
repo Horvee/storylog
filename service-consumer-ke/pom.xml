@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>storylog</artifactId>
+        <groupId>com.github.horvee.storylog</groupId>
+        <version>1.0.0.RELEASE</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>service-consumer-ke</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.horvee.storylog</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.horvee.storylog</groupId>
+            <artifactId>transfer-spring-boot-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.horvee.storylog</groupId>
+            <artifactId>save-spring-boot-elasticsearch</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.horvee.storylog</groupId>
+            <artifactId>spring-boot-interceptor-configuration</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

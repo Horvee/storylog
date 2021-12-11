@@ -1,0 +1,15 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      retries: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+  elasticsearch:
+    rest:
+      uris:
+        - http://localhost:9200
+storylog:
+  transfer-accept-message: true # default value is false,then not be accept message
+server:
+  port: 8081
