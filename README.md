@@ -1,6 +1,6 @@
 # StoryLog! You business log other choice.
 
-[中文README](https://github.com/MrHadess/storylog/blob/master/README-zh.md)
+[中文README](https://github.com/Horvee/storylog/blob/master/README-zh.md)
 
 #### The story stems from an issue with disturbing log output！
 Some businesses involve a large amount of log output, for example：
