@@ -108,4 +108,23 @@
         </plugins>
     </build>
 
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://mit-license.org/</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Horvee</name>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/Horvee/storylog.git</connection>
+        <developerConnection>scm:git:https://github.com/Horvee/storylog.git</developerConnection>
+        <url>https://github.com/Horvee/storylog</url>
+    </scm>
+
 </project>
