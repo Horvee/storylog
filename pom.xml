@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.horvee.storylog</groupId>
+    <groupId>io.github.horvee.storylog</groupId>
     <artifactId>storylog</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0.RELEASE</version>
@@ -55,37 +55,37 @@
             </dependency>
             <!--      Story log package      -->
             <dependency>
-                <groupId>com.github.horvee.storylog</groupId>
+                <groupId>io.github.horvee.storylog</groupId>
                 <artifactId>core</artifactId>
                 <version>${storylog.version.core}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.horvee.storylog</groupId>
+                <groupId>io.github.horvee.storylog</groupId>
                 <artifactId>empty-impl</artifactId>
                 <version>${storylog.version.emptyImpl}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.horvee.storylog</groupId>
+                <groupId>io.github.horvee.storylog</groupId>
                 <artifactId>springboot-configuration</artifactId>
                 <version>${storylog.version.springbootConfiguration}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.horvee.storylog</groupId>
+                <groupId>io.github.horvee.storylog</groupId>
                 <artifactId>transfer-spring-boot-kafka</artifactId>
                 <version>${storylog.version.transferSpringBootKafka}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.horvee.storylog</groupId>
+                <groupId>io.github.horvee.storylog</groupId>
                 <artifactId>save-spring-boot-elasticsearch</artifactId>
                 <version>${storylog.version.saveSpringBootElasticsearch}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.horvee.storylog</groupId>
+                <groupId>io.github.horvee.storylog</groupId>
                 <artifactId>spring-boot-interceptor-configuration</artifactId>
                 <version>${storylog.version.springBootInterceptorConfiguration}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.horvee.storylog</groupId>
+                <groupId>io.github.horvee.storylog</groupId>
                 <artifactId>transfer-spring-boot-rocketmq</artifactId>
                 <version>${storylog.version.transferSpringBootRocketMQ}</version>
             </dependency>
