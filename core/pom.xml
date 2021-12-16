@@ -32,7 +32,7 @@
         </dependency>
 
 <!--        <dependency>-->
-<!--            <groupId>com.mh.storylog</groupId>-->
+<!--            <groupId>io.github.horvee.storylog</groupId>-->
 <!--            <artifactId>empty-impl</artifactId>-->
 <!--            <scope>provided</scope>-->
 <!--        </dependency>-->
