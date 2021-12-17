@@ -14,8 +14,7 @@ import com.horvee.storylog.core.model.dto.TaskInfo;
 
 /**
  * Out put to story log storage
- *
- * */
+ */
 public class StoryLogger {
 
     private static final Logger logger = LoggerFactory.getLogger(StoryLogger.class);
@@ -24,24 +23,37 @@ public class StoryLogger {
     private static final ExecutorService executorService = Executors.newFixedThreadPool(
             Runtime.getRuntime().availableProcessors() * 2);
 
+    /**
+     * create by slf4j logger proxy
+     * @param proxyLogger need to be proxy log object
+     * @return return logger object use it
+     * */
     public static Logger createLog(Logger proxyLogger) {
         return new ProxyLogger(proxyLogger);
     }
 
-    public static void log(String text,Object... objects) {
+    /**
+     * Stream to story log logic (data will be save to story log)
+     * @param text message or message template
+     * @param objects message template value
+     * */
+    public static void log(String text, Object... objects) {
         StackTraceElement useTrace = Thread.currentThread().getStackTrace()[2];
-        log(useTrace,text,objects);
+        log(useTrace, text, objects);
     }
 
     /**
      * Use to proxy log, will be load upper level two trace
-     * */
-    protected static void logBeforeTrace(String text,Object... objects) {
+     */
+    protected static void logBeforeTrace(String text, Object... objects) {
         StackTraceElement useTrace = Thread.currentThread().getStackTrace()[3];
-        log(useTrace,text,objects);
+        log(useTrace, text, objects);
     }
 
-    public static void log(String msg,Throwable throwable) {
+    /**
+     * Log message and throwable stack message to story log
+     * */
+    public static void log(String msg, Throwable throwable) {
         ConcurrentLinkedQueue<LogInfo> logInfoConcurrentLinkedQueue = getLogCollection();
         if (logInfoConcurrentLinkedQueue == null) return;
 
@@ -51,10 +63,10 @@ public class StoryLogger {
         StringBuilder sb = new StringBuilder();
         sb.append(msg).append("\n");
         sb.append(throwable.getMessage()).append("\n");
-        for (StackTraceElement element:stackTraceElements) {
+        for (StackTraceElement element : stackTraceElements) {
             // '    {0-class}.{1-methodName}({2-fileName}:{3:numberType})'
             String elText = MessageFormat.format("    {0}.{1}({2}:{3})",
-                    element.getClassName(),element.getMethodName(),element.getFileName(),element.getLineNumber());
+                    element.getClassName(), element.getMethodName(), element.getFileName(), element.getLineNumber());
             sb.append(elText).append("\n");
         }
         sb.deleteCharAt(sb.length() - 1);
@@ -70,7 +82,7 @@ public class StoryLogger {
         logInfoConcurrentLinkedQueue.add(logInfo);
     }
 
-    private static void log(StackTraceElement useTrace,String text,Object... objects) {
+    private static void log(StackTraceElement useTrace, String text, Object... objects) {
         ConcurrentLinkedQueue<LogInfo> logInfoConcurrentLinkedQueue = getLogCollection();
         if (logInfoConcurrentLinkedQueue == null) return;
 
@@ -83,8 +95,8 @@ public class StoryLogger {
         // disable multiple task handler log objects
         if (objects != null && objects.length > 0) {
 //            executorService.submit(() -> {
-                logInfo.setMessage(margeMessage(text,objects));
-                logInfoConcurrentLinkedQueue.add(logInfo);
+            logInfo.setMessage(margeMessage(text, objects));
+            logInfoConcurrentLinkedQueue.add(logInfo);
 //            });
             return;
         }
@@ -118,10 +130,9 @@ public class StoryLogger {
 
     /**
      * Text merge
-     * 该功能初期建议不要放到线程池进行处理,因为有可能在当前主线程处理完毕后将会把日志发送到外。
-     * 如果初期版本阶段使用线程池进行处理,将有可能面临请求结束后发送日志消息,但尚有未处理的信息并未入栈,进而导致日志消息丢失的问题
-     * */
-    public static String margeMessage(String text,Object... objects) {
+     * may be need thread pool function,but need to be keep log order and add log data to send data before
+     */
+    public static String margeMessage(String text, Object... objects) {
         StringBuilder sb = new StringBuilder(text);
         StringBuilder tempsb = new StringBuilder();
         int index = -1;
@@ -130,9 +141,9 @@ public class StoryLogger {
             if (objects.length <= inputTextIndex) {
                 break;
             }
-            tempsb.append(sb.substring(0,index)).append(objects[inputTextIndex]);
+            tempsb.append(sb.substring(0, index)).append(objects[inputTextIndex]);
             inputTextIndex++;
-            sb.delete(0,index + 2);
+            sb.delete(0, index + 2);
         }
         tempsb.append(sb.toString());
         return tempsb.toString();
