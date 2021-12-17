@@ -7,7 +7,7 @@
     <groupId>io.github.horvee.storylog</groupId>
     <artifactId>storylog</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0.RELEASE</version>
+    <version>1.0.1.RELEASE</version>
     <modules>
         <module>core</module>
         <module>empty-impl</module>
@@ -27,13 +27,13 @@
     </parent>
 
     <properties>
-        <storylog.version.core>1.0.0.RELEASE</storylog.version.core>
-        <storylog.version.emptyImpl>1.0.0.RELEASE</storylog.version.emptyImpl>
-        <storylog.version.springbootConfiguration>1.0.0.RELEASE</storylog.version.springbootConfiguration>
-        <storylog.version.transferSpringBootKafka>1.0.0.RELEASE</storylog.version.transferSpringBootKafka>
-        <storylog.version.saveSpringBootElasticsearch>1.0.0.RELEASE</storylog.version.saveSpringBootElasticsearch>
-        <storylog.version.springBootInterceptorConfiguration>1.0.0.RELEASE</storylog.version.springBootInterceptorConfiguration>
-        <storylog.version.transferSpringBootRocketMQ>1.0.0.RELEASE</storylog.version.transferSpringBootRocketMQ>
+        <storylog.version.core>1.0.1.RELEASE</storylog.version.core>
+        <storylog.version.emptyImpl>1.0.1.RELEASE</storylog.version.emptyImpl>
+        <storylog.version.springbootConfiguration>1.0.1.RELEASE</storylog.version.springbootConfiguration>
+        <storylog.version.transferSpringBootKafka>1.0.1.RELEASE</storylog.version.transferSpringBootKafka>
+        <storylog.version.saveSpringBootElasticsearch>1.0.1.RELEASE</storylog.version.saveSpringBootElasticsearch>
+        <storylog.version.springBootInterceptorConfiguration>1.0.1.RELEASE</storylog.version.springBootInterceptorConfiguration>
+        <storylog.version.transferSpringBootRocketMQ>1.0.1.RELEASE</storylog.version.transferSpringBootRocketMQ>
     </properties>
 
     <dependencies>

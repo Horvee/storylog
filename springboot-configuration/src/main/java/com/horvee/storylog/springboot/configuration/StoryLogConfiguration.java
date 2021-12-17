@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * */
 @SuppressWarnings("All")
 @Configuration
-@ComponentScan({"com.mh.storylog.springboot","com.mh.storylog.transfer.springboot","com.mh.storylog.save.springboot"})
+@ComponentScan({"com.horvee.storylog.springboot","com.horvee.storylog.transfer.springboot","com.horvee.storylog.save.springboot"})
 public class StoryLogConfiguration {
 
 }

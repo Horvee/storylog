@@ -44,21 +44,21 @@
     <dependency>
       <groupId>io.github.horvee.storylog</groupId>
       <artifactId>core</artifactId>
-      <version>1.0.0.RELEASE</version>
+      <version>1.0.1.RELEASE</version>
     </dependency>
     
     <!-- SpringBoot拦截器依赖(如果不需要处理网络请求，可取消该依赖) -->
     <dependency>
       <groupId>io.github.horvee.storylog</groupId>
       <artifactId>spring-boot-interceptor-configuration</artifactId>
-      <version>1.0.0.RELEASE</version>
+      <version>1.0.1.RELEASE</version>
     </dependency>
 
     <!-- Kafka插件依赖[使用什么转换组件，就等同使用什么中间件进行数据中转处理] -->
     <dependency>
       <groupId>io.github.horvee.storylog</groupId>
       <artifactId>transfer-spring-boot-kafka</artifactId>
-      <version>1.0.0.RELEASE</version>
+      <version>1.0.1.RELEASE</version>
     </dependency>
 </dependencys>
 ```
