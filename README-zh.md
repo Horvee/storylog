@@ -98,6 +98,14 @@ storylog:
   transfer-accept-message: false # 一般用于是否启用接收并处理信息日志信息(可以另外启用KEApplication,也可以启用新的微服务接收队列中的日志信息)
 ```
 
+- 此外需要在Application中添加'@EnableStoryLog'注解,以启用StoryLog功能
+```java
+import com.horvee.storylog.springboot.configuration.annotation.EnableStoryLog;
+@EnableStoryLog
+@SpringBootApplication
+public class SampleApplication {}
+```
+
 ###### 至此，几乎所有配置项都有默认值，你可以轻松的运行你的项目了！接下来就有些劳力活
 #### 代码修改
 
