@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.text.MessageFormat;
 import java.util.Collection;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.LongAdder;
 
 /**
@@ -95,13 +96,12 @@ public class SenderProtectPool {
 
     private static class LogThreadFactory implements ThreadFactory {
 
-        private final LongAdder longAdder = new LongAdder();
+        private final AtomicInteger atomicInteger = new AtomicInteger();
 
         @Override
         public Thread newThread(Runnable r) {
             Thread thread = new Thread(r);
-            longAdder.increment();
-            thread.setName(MessageFormat.format("logsend-pool-{0}",longAdder.longValue()));
+            thread.setName(MessageFormat.format("logsend-pool-{0}", atomicInteger.incrementAndGet()));
             return thread;
         }
     }
