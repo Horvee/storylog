@@ -62,7 +62,7 @@ public class SenderProtectPool {
     private final static RejectedExecutionHandler rejectedExecutionHandler = (r, executor) -> {
         if (r instanceof SenderRunnable) {
             SenderRunnable senderRunnable = (SenderRunnable) r;
-            log.error("Send story log fail! \nTaskInfo:{} \nLogInfoList:{}",senderRunnable.getTaskInfo(),senderRunnable.getLogInfoList());
+            log.error("Send story log fail!(task reject) \nTaskInfo:{} \nLogInfoList:{}", senderRunnable.getTaskInfo(), senderRunnable.getLogInfoList());
             return;
         }
         log.error("Do send action fail");
@@ -82,7 +82,12 @@ public class SenderProtectPool {
 
         @Override
         public void run() {
-            logicRunnable.run();
+            try {
+                logicRunnable.run();
+            } catch (Exception e) {
+                log.error("Send story log fail! \nTaskInfo:{} \nLogInfoList:{}", getTaskInfo(), getLogInfoList());
+                log.error("Send story log fail stack!", e);
+            }
         }
 
         public TaskInfo getTaskInfo() {
